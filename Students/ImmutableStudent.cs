@@ -1,19 +1,15 @@
 namespace Assignment2;
 
-public class Student{
+public record ImmutableStudent {
 
     public int id {get; init;}
-    public string? givenname {get; set;}
-    public string? surname {get; set;}
-    public DateTime startdate {get; set;}
-    public DateTime enddate {get; set;}
-    public DateTime graduationdate {get; set;}
+    public string? givenname {get; init;}
+    public string? surname {get; init;}
+    public DateTime startdate {get; init;}
+    public DateTime enddate {get; init;}
+    public DateTime graduationdate {get; init;}
 
     public Status status {get => determineStatus(startdate, enddate, graduationdate);}  
-
-    public override string ToString(){
-    return $"studentid: {id} full name: {givenname} {surname}, status: {status} start/enddate: {startdate} to {enddate}";
-}
 
     public Status determineStatus(DateTime start, DateTime end, DateTime graduation) {
         Status status = Status.Active;
@@ -28,12 +24,4 @@ public class Student{
         }
         return status;
     }
-
-}
-
-
-
-
-public enum Status{
-    New, Active, Dropout, Graduated
 }
