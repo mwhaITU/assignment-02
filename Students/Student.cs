@@ -2,16 +2,16 @@ namespace Assignment2;
 
 public class Student{
 
-    int id {get; set;}
-    string givenname {get; set;}
-    string surname {get; set;}
-    status status {get; set;}  
-    DateTime startdate {get; set;}
-    DateTime enddate {get; set;}
-    DateTime graduationdate {get; set;}
+    public int id {get; set;}
+    public string? givenname {get; set;}
+    public string? surname {get; set;}
+    public status status {get; set;}  
+    public DateTime startdate {get; set;}
+    public DateTime enddate {get; set;}
+    public DateTime graduationdate {get; set;}
 
     public override string ToString(){
-    return $"studentid: {id} full name: {givenname} {surname}, status: {status} start/enddate: {startdate}-{enddate}";
+    return $"studentid: {id} full name: {givenname} {surname}, status: {status} start/enddate: {startdate} to {enddate}";
 }
 
 }
