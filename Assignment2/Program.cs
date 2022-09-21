@@ -30,7 +30,7 @@
 
         // Delegates / Anonymous
 
-        // 1.
+        /* // 1.
         Action<string> reverse = value => {
             var reversedValue = value.Reverse();
             foreach(char c in reversedValue) {
@@ -54,4 +54,11 @@
             return false;
         };
 
-        Console.WriteLine(numericallyEqual(5, "005"));
+        Console.WriteLine(numericallyEqual(5, "005")); */
+
+var wizards = WizardCollection.Create();
+        var potters = from wizard in wizards
+                    where wizard.Medium == "Harry Potter"
+                    select Tuple.Create(wizard.Name,wizard.Year);
+
+        potters.ToList().ForEach(Console.WriteLine);
