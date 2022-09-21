@@ -1,5 +1,4 @@
-﻿
-        foreach (var wizard in WizardCollection.Create())
+﻿        foreach (var wizard in WizardCollection.Create())
         {
             Console.WriteLine(wizard);
         }
@@ -27,3 +26,32 @@
         foreach(int i in ysLeapYearResult) {
             Console.WriteLine(i);
         } */
+
+
+        // Delegates / Anonymous
+
+        // 1.
+        Action<string> reverse = value => {
+            var reversedValue = value.Reverse();
+            foreach(char c in reversedValue) {
+                Console.Write(c);
+            }
+        };
+
+        reverse("Hello my friend");
+
+
+
+        // 2.
+        Func<int, int, int> product = (a, b) => a * b;
+        Console.WriteLine(product(3, 5));
+
+        // 3.
+
+        Func<int, string, bool> numericallyEqual = (a, b) => {
+            var c = int.Parse(b);
+            if (a == c) return true;
+            return false;
+        };
+
+        Console.WriteLine(numericallyEqual(5, "005"));
